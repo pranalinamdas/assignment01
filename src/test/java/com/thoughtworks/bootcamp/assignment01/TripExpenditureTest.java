@@ -12,11 +12,20 @@ public class TripExpenditureTest {
 
     @Test
     void givenZeroSpentMoney_WhenCalculateExpenditure_ThenShouldReturnZero() {
+        List<Friends> friends = new ArrayList<Friends>();
         List<SpentMoney> spentMoney = new ArrayList<SpentMoney>();
 
-        TripExpenditure expenditure = new TripExpenditure(spentMoney);
-        Assertions.assertEquals(0, expenditure.calculate());
+        TripExpenditure expenditureWithZeroSpentMoney = new TripExpenditure(friends,0.0f);
+        Assertions.assertEquals(0, expenditureWithZeroSpentMoney.calculate());
     }
 
+    @Test
+    void givenOneSpentMoney_WhenCalculateExpenditure_ThenShouldReturnOne() {
+        List<Friends> friends = new ArrayList<Friends>();
+        List<SpentMoney> spentMoney = new ArrayList<SpentMoney>();
+
+        TripExpenditure expenditureWithOneSpentMoney = new TripExpenditure(friends, 1.0f);
+        Assertions.assertEquals(1.0f, expenditureWithOneSpentMoney.calculate());
+    }
 
 }
