@@ -39,4 +39,12 @@ public class TripExpenditureTest {
 
     }
 
+    @Test
+    void givenFourSpentMoneyAndListOfFourFriends_WhenDivideAmount_ThenShouldReturnOne(){
+        List<Friends> friends = new ArrayList<>();
+
+        TripExpenditure totalFriends = new TripExpenditure(friends, 4);
+        Assertions.assertEquals(1,totalFriends.divideAmount());
+
+    }
 }
