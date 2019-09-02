@@ -13,7 +13,11 @@ public class TripExpenditure {
         this.spentMoney =  spentMoney;
     }
 
-    public float calculate() {
+    public float calculateBill() {
         return spentMoney;
+    }
+
+    public float divideAmount() {
+        return 0;
     }
 }

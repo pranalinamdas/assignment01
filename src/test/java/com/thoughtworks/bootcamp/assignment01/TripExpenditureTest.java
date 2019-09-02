@@ -10,13 +10,15 @@ import java.util.List;
 
 public class TripExpenditureTest {
 
+
+
     @Test
     void givenZeroSpentMoney_WhenCalculateExpenditure_ThenShouldReturnZero() {
         List<Friends> friends = new ArrayList<Friends>();
         List<SpentMoney> spentMoney = new ArrayList<SpentMoney>();
 
         TripExpenditure expenditureWithZeroSpentMoney = new TripExpenditure(friends,0.0f);
-        Assertions.assertEquals(0, expenditureWithZeroSpentMoney.calculate());
+        Assertions.assertEquals(0, expenditureWithZeroSpentMoney.calculateBill());
     }
 
     @Test
@@ -25,7 +27,16 @@ public class TripExpenditureTest {
         List<SpentMoney> spentMoney = new ArrayList<SpentMoney>();
 
         TripExpenditure expenditureWithOneSpentMoney = new TripExpenditure(friends, 1.0f);
-        Assertions.assertEquals(1.0f, expenditureWithOneSpentMoney.calculate());
+        Assertions.assertEquals(1.0f, expenditureWithOneSpentMoney.calculateBill());
+    }
+
+    @Test
+    void givenFriendListIsZero_WhenDivideAmount_ThenShouldReturnZero(){
+        List<Friends> friends = new ArrayList<>();
+
+        TripExpenditure totalFriends = new TripExpenditure(friends, 0);
+        Assertions.assertEquals(0,totalFriends.divideAmount());
+
     }
 
 }
