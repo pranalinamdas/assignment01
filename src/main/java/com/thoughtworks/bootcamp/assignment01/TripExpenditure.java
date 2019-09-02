@@ -23,4 +23,8 @@ public class TripExpenditure {
     public float divideAmount() {
         return spentMoney/4;
     }
+
+    public float calculate() {
+        return 0;
+    }
 }

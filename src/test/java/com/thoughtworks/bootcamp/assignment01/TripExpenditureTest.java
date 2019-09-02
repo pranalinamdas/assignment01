@@ -56,4 +56,12 @@ public class TripExpenditureTest {
         Assertions.assertEquals(25,totalFriends.divideAmount());
 
     }
+
+    @Test
+    void givenZeroExpenditure_WhenCalculateOwesOrGives_ThenShouldReturnZero(){
+        List<Friends> friends = new ArrayList<>();
+
+        TripExpenditure expenditure = new TripExpenditure(friends, 0);
+        Assertions.assertEquals(0,expenditure.calculate());
+    }
 }
